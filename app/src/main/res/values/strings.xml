@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Miniature Golf Counter</string>
+    <string name="ok">ok</string>
+    <string name="cancel">cancel</string>
+    <string name="player1">Player1</string>
+    <string name="player2">Player2</string>
+    <string name="hole_1">Hole 1</string>
+    <string name="hole_10">Hole 10</string>
+    <string name="hole_2">Hole 2</string>
+    <string name="hole_11">Hole 11</string>
+    <string name="hole_3">Hole 3</string>
+    <string name="hole_12">Hole 12</string>
+    <string name="hole_4">Hole 4</string>
+    <string name="hole_13">Hole 13</string>
+    <string name="hole_5">Hole 5</string>
+    <string name="hole_14">Hole 14</string>
+    <string name="hole_6">Hole 6</string>
+    <string name="hole_15">Hole 15</string>
+    <string name="hole_7">Hole 7</string>
+    <string name="hole_16">Hole 16</string>
+    <string name="hole_8">Hole 8</string>
+    <string name="hole_17">Hole 17</string>
+    <string name="hole_9">Hole 9</string>
+    <string name="hole_18">Hole 18</string>
+    <string name="resetB">reset</string>
+    <string name="undoB">UNDO</string>
+    <string name="switchB">Switch</string>
+</resources>

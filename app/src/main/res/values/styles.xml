@@ -1,0 +1,16 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#8AAC4D</item>
+        <item name="colorPrimaryDark">#1B5E20</item>
+        <item name="colorAccent">#FD0039</item>
+    </style>
+
+    <style name="hole">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">cursive</item>
+    </style>
+
+</resources>
