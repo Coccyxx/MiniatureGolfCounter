@@ -3,14 +3,116 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">#8AAC4D</item>
-        <item name="colorPrimaryDark">#1B5E20</item>
+        <item name="colorPrimary">#1B5E20</item>
+        <item name="colorPrimaryDark">#111</item>
         <item name="colorAccent">#FD0039</item>
     </style>
 
     <style name="hole">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:paddingRight">8dp</item>
         <item name="android:textSize">14sp</item>
-        <item name="android:fontFamily">cursive</item>
+        <item name="android:textColor">#222</item>
+        <item name="android:fontFamily">@font/advent_pro</item>
     </style>
+
+    <style name="score">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:fontFamily">@font/advent_pro_semibold</item>
+        <item name="android:text">-</item>
+    </style>
+
+    <style name="buttonBall" parent="Widget.AppCompat.Button.Small">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">4dp</item>
+        <item name="android:background">@drawable/ballred</item>
+        <item name="android:fontFamily">@font/advent_pro_bold</item>
+        <item name="android:textColor">#222</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="playerName">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:fontFamily">@font/advent_pro_semibold</item>
+        <item name="android:inputType">textCapWords</item>
+        <item name="android:maxLength">8</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:hint">............</item>
+        <item name="android:textSize">42sp</item>
+    </style>
+
+    <style name="underline_long">
+        <item name="android:visibility">invisible</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">2dp</item>
+        <item name="android:background">#000</item>
+        <item name="android:layout_marginLeft">24dp</item>
+        <item name="android:layout_marginRight">24dp</item>
+    </style>
+
+    <style name="underline_short">
+        <item name="android:visibility">invisible</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">2dp</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:layout_marginLeft">48dp</item>
+        <item name="android:layout_marginRight">48dp</item>
+        <item name="android:background">#000</item>
+    </style>
+
+    <style name="total_score">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:focusable">true</item>
+        <item name="android:focusableInTouchMode">true</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:fontFamily">@font/advent_pro_semibold</item>
+        <item name="android:textColor">#333</item>
+        <item name="android:textSize">56sp</item>
+        <item name="android:text">0</item>
+        <item name="android:layout_marginBottom">8dp</item>
+    </style>
+
+    <style name="scoreboard">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:stretchColumns">2</item>
+        <item name="android:divider">@drawable/table_row_divider</item>
+        <item name="android:showDividers">middle|beginning|end</item>
+    </style>
+
+    <style name="table_row">
+        <item name="android:paddingTop">3dp</item>
+        <item name="android:paddingBottom">3dp</item>
+    </style>
+
+    <style name="buttonRect" parent="android:Widget.Holo.Light.Button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:fontFamily">@font/advent_pro</item>
+    </style>
+
+    <style name="view_divider">
+        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_marginBottom">4dp</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:background">#000000</item>
+    </style>
+
 
 </resources>

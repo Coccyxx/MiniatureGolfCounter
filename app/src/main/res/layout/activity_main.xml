@@ -1,30 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.android.miniaturegolfcounter.MainActivity"
     android:focusable="true"
-    android:focusableInTouchMode="true">
+    android:focusableInTouchMode="true"
+    tools:context="com.example.android.miniaturegolfcounter.MainActivity">
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
+        android:contentDescription="@string/BackgroundDescr"
         android:scaleType="centerCrop"
-        android:src="@drawable/mgback2" />
+        android:src="@drawable/mgback" />
 
     <LinearLayout
-
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:baselineAligned="false"
         android:orientation="horizontal">
-
 
         <LinearLayout
             android:layout_width="0dp"
@@ -34,100 +30,89 @@
 
             <EditText
                 android:id="@+id/player1Name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@android:color/transparent"
-                android:fontFamily="cursive"
-                android:inputType="text"
-                android:maxLength="8"
-                android:maxLines="1"
-                android:text="@string/player1"
-                android:textColor="@color/colorAccent"
-                android:textSize="42sp" />
+                style="@style/playerName" />
 
+            <View
+                android:id="@+id/underline1P1"
+                style="@style/underline_long" />
+
+            <View
+                android:id="@+id/underline2P1"
+                style="@style/underline_short" />
 
             <TextView
                 android:id="@+id/player1Strokes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:focusable="true"
-                android:focusableInTouchMode="true"
-                android:text="0"
-                android:textColor="#000"
-                android:textSize="56sp" />
+                style="@style/total_score" />
 
 
             <TableLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/scoreboard"
                 android:layout_marginLeft="24dp"
-                android:layout_marginRight="16dp"
-                android:stretchColumns="2">
+                android:layout_marginRight="16dp">
 
-                <View
-                    android:layout_height="1dp"
-                    android:layout_marginBottom="@dimen/margin_bottom"
-                    android:layout_marginTop="@dimen/margin_top"
-                    android:background="#000000" />
 
-                <TableRow>
+                <TableRow style="@style/table_row">
+
+                    <TextView
+                        style="@style/hole"
+                        android:fontFamily="@font/advent_pro_semibold"
+                        android:text="@string/hole" />
+
+                    <TextView
+                        style="@style/hole"
+                        android:fontFamily="@font/advent_pro_semibold"
+                        android:text="@string/score" />
 
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingRight="16dp"
-                        android:text="@string/hole_1"
-                        android:textAppearance="@style/hole" />
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        style="@style/hole"
+                        android:fontFamily="@font/advent_pro_semibold"
+                        android:text="@string/hole" />
+
+                    <TextView
+                        style="@style/hole"
+                        android:fontFamily="@font/advent_pro_semibold"
+                        android:text="@string/score" />
+
+                </TableRow>
+
+
+                <TableRow style="@style/table_row">
+
+                    <TextView
+                        style="@style/hole"
+                        android:text="@string/hole_1" />
 
                     <TextView
                         android:id="@+id/p1h1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="-"
-                        android:textAppearance="@style/hole" />
+                        style="@style/score" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingRight="16dp"
-                        android:text="@string/hole_10"
-                        android:textAppearance="@style/hole" />
+                        style="@style/hole"
+                        android:text="@string/hole_10" />
 
                     <TextView
                         android:id="@+id/p1h10"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="-"
-                        android:textAppearance="@style/hole" />
+                        style="@style/score" />
 
                 </TableRow>
 
-                <View
-                    android:layout_height="1dp"
-                    android:layout_marginBottom="@dimen/margin_bottom"
-                    android:layout_marginTop="@dimen/margin_top"
-                    android:background="#000000" />
-
-                <TableRow>
+                <TableRow style="@style/table_row">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/hole_2"
-                        android:textAppearance="@style/hole" />
+                        style="@style/hole"
+                        android:text="@string/hole_2" />
 
                     <TextView
                         android:id="@+id/p1h2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="-"
-                        android:textAppearance="@style/hole" />
+                        style="@style/score" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -135,305 +120,174 @@
 
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingRight="4dp"
-                        android:text="@string/hole_11"
-                        android:textAppearance="@style/hole" />
+                        style="@style/hole"
+                        android:text="@string/hole_11" />
 
                     <TextView
                         android:id="@+id/p1h11"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="-"
-                        android:textAppearance="@style/hole" />
+                        style="@style/score" />
                 </TableRow>
 
-                <View
-                    android:layout_height="1dp"
-                    android:layout_marginBottom="@dimen/margin_bottom"
-                    android:layout_marginTop="@dimen/margin_top"
-                    android:background="#000000" />
-
-                <TableRow>
+                <TableRow style="@style/table_row">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/hole_3"
-                        android:textAppearance="@style/hole" />
+                        style="@style/hole"
+                        android:text="@string/hole_3" />
 
                     <TextView
                         android:id="@+id/p1h3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="-"
-                        android:textAppearance="@style/hole" />
+                        style="@style/score" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingRight="4dp"
-                        android:text="@string/hole_12"
-                        android:textAppearance="@style/hole" />
+                        style="@style/hole"
+                        android:text="@string/hole_12" />
 
                     <TextView
                         android:id="@+id/p1h12"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="-"
-                        android:textAppearance="@style/hole" />
+                        style="@style/score" />
                 </TableRow>
 
-                <View
-                    android:layout_height="1dp"
-                    android:layout_marginBottom="@dimen/margin_bottom"
-                    android:layout_marginTop="@dimen/margin_top"
-                    android:background="#000000" />
-
-                <TableRow>
+                <TableRow style="@style/table_row">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/hole_4"
-                        android:textAppearance="@style/hole" />
+                        style="@style/hole"
+                        android:text="@string/hole_4" />
 
                     <TextView
                         android:id="@+id/p1h4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="-"
-                        android:textAppearance="@style/hole" />
+                        style="@style/score" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingRight="4dp"
-                        android:text="@string/hole_13"
-                        android:textAppearance="@style/hole" />
+                        style="@style/hole"
+                        android:text="@string/hole_13" />
 
                     <TextView
                         android:id="@+id/p1h13"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="-"
-                        android:textAppearance="@style/hole" />
+                        style="@style/score" />
                 </TableRow>
 
-                <View
-                    android:layout_height="1dp"
-                    android:layout_marginBottom="@dimen/margin_bottom"
-                    android:layout_marginTop="@dimen/margin_top"
-                    android:background="#000000" />
-
-                <TableRow>
+                <TableRow style="@style/table_row">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/hole_5"
-                        android:textAppearance="@style/hole" />
+                        style="@style/hole"
+                        android:text="@string/hole_5" />
 
                     <TextView
                         android:id="@+id/p1h5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="-"
-                        android:textAppearance="@style/hole" />
+                        style="@style/score" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingRight="4dp"
-                        android:text="@string/hole_14"
-                        android:textAppearance="@style/hole" />
+                        style="@style/hole"
+                        android:text="@string/hole_14" />
 
                     <TextView
                         android:id="@+id/p1h14"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="-"
-                        android:textAppearance="@style/hole" />
+                        style="@style/score" />
                 </TableRow>
 
-                <View
-                    android:layout_height="1dp"
-                    android:layout_marginBottom="@dimen/margin_bottom"
-                    android:layout_marginTop="@dimen/margin_top"
-                    android:background="#000000" />
-
-                <TableRow>
+                <TableRow style="@style/table_row">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/hole_6"
-                        android:textAppearance="@style/hole" />
+                        style="@style/hole"
+                        android:text="@string/hole_6" />
 
                     <TextView
                         android:id="@+id/p1h6"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="-"
-                        android:textAppearance="@style/hole" />
+                        style="@style/score" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingRight="4dp"
-                        android:text="@string/hole_15"
-                        android:textAppearance="@style/hole" />
+                        style="@style/hole"
+                        android:text="@string/hole_15" />
 
                     <TextView
                         android:id="@+id/p1h15"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="-"
-                        android:textAppearance="@style/hole" />
+                        style="@style/score" />
                 </TableRow>
 
-                <View
-                    android:layout_height="1dp"
-                    android:layout_marginBottom="@dimen/margin_bottom"
-                    android:layout_marginTop="@dimen/margin_top"
-                    android:background="#000000" />
-
-                <TableRow>
+                <TableRow style="@style/table_row">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/hole_7"
-                        android:textAppearance="@style/hole" />
+                        style="@style/hole"
+                        android:text="@string/hole_7" />
 
                     <TextView
                         android:id="@+id/p1h7"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="-"
-                        android:textAppearance="@style/hole" />
+                        style="@style/score" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingRight="4dp"
-                        android:text="@string/hole_16"
-                        android:textAppearance="@style/hole" />
+                        style="@style/hole"
+                        android:text="@string/hole_16" />
 
                     <TextView
                         android:id="@+id/p1h16"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="-"
-                        android:textAppearance="@style/hole" />
+                        style="@style/score" />
                 </TableRow>
 
-                <View
-                    android:layout_height="1dp"
-                    android:layout_marginBottom="@dimen/margin_bottom"
-                    android:layout_marginTop="@dimen/margin_top"
-                    android:background="#000000" />
-
-                <TableRow>
+                <TableRow style="@style/table_row">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/hole_8"
-                        android:textAppearance="@style/hole" />
+                        style="@style/hole"
+                        android:text="@string/hole_8" />
 
                     <TextView
                         android:id="@+id/p1h8"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="-"
-                        android:textAppearance="@style/hole" />
+                        style="@style/score" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingRight="4dp"
-                        android:text="@string/hole_17"
-                        android:textAppearance="@style/hole" />
+                        style="@style/hole"
+                        android:text="@string/hole_17" />
 
                     <TextView
                         android:id="@+id/p1h17"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="-"
-                        android:textAppearance="@style/hole" />
+                        style="@style/score" />
                 </TableRow>
 
-                <View
-                    android:layout_height="1dp"
-                    android:layout_marginBottom="@dimen/margin_bottom"
-                    android:layout_marginTop="@dimen/margin_top"
-                    android:background="#000000" />
-
-                <TableRow>
+                <TableRow style="@style/table_row">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/hole_9"
-                        android:textAppearance="@style/hole" />
+                        style="@style/hole"
+                        android:text="@string/hole_9" />
 
                     <TextView
                         android:id="@+id/p1h9"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="-"
-                        android:textAppearance="@style/hole" />
+                        style="@style/score" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingRight="4dp"
-                        android:text="@string/hole_18"
-                        android:textAppearance="@style/hole" />
+                        style="@style/hole"
+                        android:text="@string/hole_18" />
 
                     <TextView
                         android:id="@+id/p1h18"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="-"
-                        android:textAppearance="@style/hole" />
+                        style="@style/score" />
                 </TableRow>
-
-                <View
-                    android:layout_height="1dp"
-                    android:layout_marginBottom="@dimen/margin_bottom"
-                    android:layout_marginTop="@dimen/margin_top"
-                    android:background="#000000" />
 
 
             </TableLayout>
@@ -449,402 +303,263 @@
 
             <EditText
                 android:id="@+id/player2Name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@android:color/transparent"
-                android:fontFamily="cursive"
-                android:inputType="text"
-                android:maxLength="8"
-                android:maxLines="1"
-                android:text="@string/player2"
-                android:textColor="@color/colorAccent"
-                android:textSize="42sp" />
+                style="@style/playerName" />
+
+            <View
+                android:id="@+id/underline1P2"
+                style="@style/underline_long" />
+
+            <View
+                android:id="@+id/underline2P2"
+                style="@style/underline_short" />
 
             <TextView
                 android:id="@+id/player2Strokes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="0"
-                android:textColor="#000"
-                android:textSize="56sp" />
+                style="@style/total_score" />
 
 
             <TableLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/scoreboard"
                 android:layout_marginLeft="16dp"
-                android:layout_marginRight="24dp"
-                android:stretchColumns="2">
+                android:layout_marginRight="24dp">
 
-                <View
-                    android:layout_height="1dp"
-                    android:layout_marginBottom="@dimen/margin_bottom"
-                    android:layout_marginTop="@dimen/margin_top"
-                    android:background="#000000" />
 
-                <TableRow>
+                <TableRow style="@style/table_row">
+
+                    <TextView
+                        style="@style/hole"
+                        android:fontFamily="@font/advent_pro_semibold"
+                        android:text="@string/hole" />
+
+                    <TextView
+                        style="@style/hole"
+                        android:fontFamily="@font/advent_pro_semibold"
+                        android:text="@string/score" />
 
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingRight="16dp"
-                        android:text="@string/hole_1"
-                        android:textAppearance="@style/hole" />
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        style="@style/hole"
+                        android:fontFamily="@font/advent_pro_semibold"
+                        android:text="@string/hole" />
+
+                    <TextView
+                        style="@style/hole"
+                        android:fontFamily="@font/advent_pro_semibold"
+                        android:text="@string/score" />
+                </TableRow>
+
+
+                <TableRow style="@style/table_row">
+
+                    <TextView
+                        style="@style/hole"
+                        android:text="@string/hole_1" />
 
                     <TextView
                         android:id="@+id/p2h1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="-"
-                        android:textAppearance="@style/hole" />
+                        style="@style/score" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingRight="16dp"
-                        android:text="@string/hole_10"
-                        android:textAppearance="@style/hole" />
+
+                        style="@style/hole"
+                        android:text="@string/hole_10" />
 
                     <TextView
                         android:id="@+id/p2h10"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="-"
-                        android:textAppearance="@style/hole" />
+                        style="@style/score" />
 
                 </TableRow>
 
-                <View
-                    android:layout_height="1dp"
-                    android:layout_marginBottom="@dimen/margin_bottom"
-                    android:layout_marginTop="@dimen/margin_top"
-                    android:background="#000000" />
-
-                <TableRow>
+                <TableRow style="@style/table_row">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/hole_2"
-                        android:textAppearance="@style/hole" />
+                        style="@style/hole"
+                        android:text="@string/hole_2" />
 
                     <TextView
                         android:id="@+id/p2h2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="-"
-                        android:textAppearance="@style/hole" />
+                        style="@style/score" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingRight="4dp"
-                        android:text="@string/hole_11"
-                        android:textAppearance="@style/hole" />
+                        style="@style/hole"
+                        android:text="@string/hole_11" />
 
                     <TextView
                         android:id="@+id/p2h11"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="-"
-                        android:textAppearance="@style/hole" />
+                        style="@style/score" />
                 </TableRow>
 
-                <View
-                    android:layout_height="1dp"
-                    android:layout_marginBottom="@dimen/margin_bottom"
-                    android:layout_marginTop="@dimen/margin_top"
-                    android:background="#000000" />
-
-                <TableRow>
+                <TableRow style="@style/table_row">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/hole_3"
-                        android:textAppearance="@style/hole" />
+                        style="@style/hole"
+                        android:text="@string/hole_3" />
 
                     <TextView
                         android:id="@+id/p2h3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="-"
-                        android:textAppearance="@style/hole" />
+                        style="@style/score" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingRight="4dp"
-                        android:text="@string/hole_12"
-                        android:textAppearance="@style/hole" />
+                        style="@style/hole"
+                        android:text="@string/hole_12" />
 
                     <TextView
                         android:id="@+id/p2h12"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="-"
-                        android:textAppearance="@style/hole" />
+                        style="@style/score" />
                 </TableRow>
 
-                <View
-                    android:layout_height="1dp"
-                    android:layout_marginBottom="@dimen/margin_bottom"
-                    android:layout_marginTop="@dimen/margin_top"
-                    android:background="#000000" />
-
-                <TableRow>
+                <TableRow style="@style/table_row">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/hole_4"
-                        android:textAppearance="@style/hole" />
+                        style="@style/hole"
+                        android:text="@string/hole_4" />
 
                     <TextView
                         android:id="@+id/p2h4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="-"
-                        android:textAppearance="@style/hole" />
+                        style="@style/score" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingRight="4dp"
-                        android:text="@string/hole_13"
-                        android:textAppearance="@style/hole" />
+                        style="@style/hole"
+                        android:text="@string/hole_13" />
 
                     <TextView
                         android:id="@+id/p2h13"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="-"
-                        android:textAppearance="@style/hole" />
+                        style="@style/score" />
                 </TableRow>
 
-                <View
-                    android:layout_height="1dp"
-                    android:layout_marginBottom="@dimen/margin_bottom"
-                    android:layout_marginTop="@dimen/margin_top"
-                    android:background="#000000" />
-
-                <TableRow>
+                <TableRow style="@style/table_row">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/hole_5"
-                        android:textAppearance="@style/hole" />
+                        style="@style/hole"
+                        android:text="@string/hole_5" />
 
                     <TextView
                         android:id="@+id/p2h5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="-"
-                        android:textAppearance="@style/hole" />
+                        style="@style/score" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingRight="4dp"
-                        android:text="@string/hole_14"
-                        android:textAppearance="@style/hole" />
+                        style="@style/hole"
+                        android:text="@string/hole_14" />
 
                     <TextView
                         android:id="@+id/p2h14"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="-"
-                        android:textAppearance="@style/hole" />
+                        style="@style/score" />
                 </TableRow>
 
-                <View
-                    android:layout_height="1dp"
-                    android:layout_marginBottom="@dimen/margin_bottom"
-                    android:layout_marginTop="@dimen/margin_top"
-                    android:background="#000000" />
-
-                <TableRow>
+                <TableRow style="@style/table_row">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/hole_6"
-                        android:textAppearance="@style/hole" />
+                        style="@style/hole"
+                        android:text="@string/hole_6" />
 
                     <TextView
                         android:id="@+id/p2h6"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="-"
-                        android:textAppearance="@style/hole" />
+                        style="@style/score" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingRight="4dp"
-                        android:text="@string/hole_15"
-                        android:textAppearance="@style/hole" />
+                        style="@style/hole"
+                        android:text="@string/hole_15" />
 
                     <TextView
                         android:id="@+id/p2h15"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="-"
-                        android:textAppearance="@style/hole" />
+                        style="@style/score" />
                 </TableRow>
 
-                <View
-                    android:layout_height="1dp"
-                    android:layout_marginBottom="@dimen/margin_bottom"
-                    android:layout_marginTop="@dimen/margin_top"
-                    android:background="#000000" />
-
-                <TableRow>
+                <TableRow style="@style/table_row">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/hole_7"
-                        android:textAppearance="@style/hole" />
+                        style="@style/hole"
+                        android:text="@string/hole_7" />
 
                     <TextView
                         android:id="@+id/p2h7"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="-"
-                        android:textAppearance="@style/hole" />
+                        style="@style/score" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingRight="4dp"
-                        android:text="@string/hole_16"
-                        android:textAppearance="@style/hole" />
+                        style="@style/hole"
+                        android:text="@string/hole_16" />
 
                     <TextView
                         android:id="@+id/p2h16"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="-"
-                        android:textAppearance="@style/hole" />
+                        style="@style/score" />
                 </TableRow>
 
-                <View
-                    android:layout_height="1dp"
-                    android:layout_marginBottom="@dimen/margin_bottom"
-                    android:layout_marginTop="@dimen/margin_top"
-                    android:background="#000000" />
-
-                <TableRow>
+                <TableRow style="@style/table_row">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/hole_8"
-                        android:textAppearance="@style/hole" />
+                        style="@style/hole"
+                        android:text="@string/hole_8" />
 
                     <TextView
                         android:id="@+id/p2h8"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="-"
-                        android:textAppearance="@style/hole" />
+                        style="@style/score" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingRight="4dp"
-                        android:text="@string/hole_17"
-                        android:textAppearance="@style/hole" />
+                        style="@style/hole"
+                        android:text="@string/hole_17" />
 
                     <TextView
                         android:id="@+id/p2h17"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="-"
-                        android:textAppearance="@style/hole" />
+                        style="@style/score" />
                 </TableRow>
 
-                <View
-                    android:layout_height="1dp"
-                    android:layout_marginBottom="@dimen/margin_bottom"
-                    android:layout_marginTop="@dimen/margin_top"
-                    android:background="#000000" />
-
-                <TableRow>
+                <TableRow style="@style/table_row">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/hole_9"
-                        android:textAppearance="@style/hole" />
+                        style="@style/hole"
+                        android:text="@string/hole_9" />
 
                     <TextView
                         android:id="@+id/p2h9"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="-"
-                        android:textAppearance="@style/hole" />
+                        style="@style/score" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingRight="4dp"
-                        android:text="@string/hole_18"
-                        android:textAppearance="@style/hole" />
+                        style="@style/hole"
+                        android:text="@string/hole_18" />
 
                     <TextView
                         android:id="@+id/p2h18"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="-"
-                        android:textAppearance="@style/hole" />
+                        style="@style/score" />
                 </TableRow>
-
-                <View
-                    android:layout_height="1dp"
-                    android:layout_marginBottom="@dimen/margin_bottom"
-                    android:layout_marginTop="@dimen/margin_top"
-                    android:background="#000000" />
 
             </TableLayout>
 
@@ -857,126 +572,68 @@
 
     <Button
         android:id="@+id/strokes7"
-        style="@style/Widget.AppCompat.Button.Small"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/buttonBall"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_margin="4dp"
         android:layout_toRightOf="@id/strokes6"
-        android:background="@drawable/ballred"
-        android:fontFamily="cursive"
         android:onClick="stroke7"
-        android:text="+7"
-        android:textAppearance="@style/TextAppearance.AppCompat.Button"
-        android:textColor="#222"
-        android:textSize="16sp"
-        android:textStyle="bold" />
+        android:text="@string/plus7" />
 
     <Button
         android:id="@+id/strokes6"
-        style="@style/Widget.AppCompat.Button.Small"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/buttonBall"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_margin="4dp"
         android:layout_toRightOf="@id/reset"
-        android:background="@drawable/ballred"
-        android:fontFamily="cursive"
         android:onClick="stroke6"
-        android:text="+6"
-        android:textColor="#222"
-        android:textSize="16sp"
-        android:textStyle="bold" />
+        android:text="@string/plus6" />
 
     <Button
         android:id="@+id/strokes5"
-        style="@style/Widget.AppCompat.Button.Small"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/buttonBall"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_margin="4dp"
         android:layout_toLeftOf="@id/reset"
-        android:background="@drawable/ballred"
-        android:fontFamily="cursive"
         android:onClick="stroke5"
-        android:text="+5"
-        android:textColor="#222"
-        android:textSize="16sp"
-        android:textStyle="bold" />
+        android:text="@string/plus5" />
 
     <Button
         android:id="@+id/strokes4"
-        style="@style/Widget.AppCompat.Button.Small"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/buttonBall"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_margin="4dp"
         android:layout_toLeftOf="@id/strokes5"
-        android:background="@drawable/ballred"
-        android:fontFamily="cursive"
         android:onClick="stroke4"
-        android:text="+4"
-        android:textColor="#222"
-        android:textSize="16sp"
-        android:textStyle="bold" />
+        android:text="@string/plus4" />
 
     <Button
         android:id="@+id/strokes3"
-        style="@style/Widget.AppCompat.Button.Small"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/buttonBall"
         android:layout_above="@+id/strokes6"
-        android:layout_margin="4dp"
         android:layout_toRightOf="@+id/strokes2"
-        android:background="@drawable/ballred"
-        android:fontFamily="cursive"
         android:onClick="stroke3"
-        android:text="+3"
-        android:textColor="#222"
-        android:textSize="16sp"
-        android:textStyle="bold" />
+        android:text="@string/plus3" />
 
     <Button
         android:id="@+id/strokes2"
-        style="@style/Widget.AppCompat.Button.Small"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/buttonBall"
         android:layout_above="@+id/strokes6"
         android:layout_centerHorizontal="true"
-        android:layout_margin="4dp"
-        android:background="@drawable/ballred"
-        android:fontFamily="cursive"
         android:onClick="stroke2"
-        android:text="+2"
-        android:textColor="#222"
-        android:textSize="16sp"
-        android:textStyle="bold" />
+        android:text="@string/plus2" />
 
     <Button
         android:id="@+id/strokes1"
-        style="@style/Widget.AppCompat.Button.Small"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/buttonBall"
         android:layout_above="@+id/strokes6"
-        android:layout_margin="4dp"
         android:layout_toLeftOf="@+id/strokes2"
         android:layout_toStartOf="@+id/strokes2"
-        android:background="@drawable/ballred"
-        android:fontFamily="cursive"
         android:onClick="stroke1"
-        android:text="+1"
-        android:textColor="#222"
-        android:textSize="16sp"
-        android:textStyle="bold" />
+        android:text="@string/plus1" />
 
     <Button
         android:id="@+id/reset"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/buttonRect"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="8dp"
@@ -986,19 +643,17 @@
     <!--UNDO-Button to undo the last stroke-->
     <Button
         android:id="@+id/undo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/strokes7"
-        android:layout_marginBottom="8dp"
-        android:layout_toRightOf="@id/strokes3"
+        style="@style/buttonRect"
+        android:layout_alignTop="@+id/switchP"
+        android:layout_toEndOf="@+id/strokes3"
+        android:layout_toRightOf="@+id/strokes3"
         android:onClick="undo"
         android:text="@string/undoB" />
 
     <!--SWITCH-Button to switch between player 1 and 2-->
     <Button
         android:id="@+id/switchP"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/buttonRect"
         android:layout_above="@id/strokes4"
         android:layout_marginBottom="8dp"
         android:layout_toLeftOf="@id/strokes1"
